@@ -1,0 +1,48 @@
+name: CI
+
+on:
+  push:
+    branches: [ master ]
+    paths-ignore:
+      - 'README.md'
+      - 'LICENSE'
+  pull_request:
+    branches: [ master ]
+    paths-ignore:
+      - 'README.md'
+      - 'LICENSE'
+
+jobs:
+  erlang_18:
+    runs-on: ubuntu-latest
+
+    container:
+      image: erlang:18
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Compile
+      run: rebar3 compile
+    - name: Check types
+      run: rebar3 dialyzer
+    - name: Check formatting
+      run: rebar3 fmt -c
+    - name: Run tests
+      run: rebar3 ct
+
+  erlang_23:
+    runs-on: ubuntu-latest
+
+    container:
+      image: erlang:23
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Compile
+      run: rebar3 compile
+    - name: Check types
+      run: rebar3 dialyzer
+    - name: Check formatting
+      run: rebar3 fmt -c
+    - name: Run tests
+      run: rebar3 ct
