@@ -1,0 +1,12 @@
+@author Roman Pushkov <pushkovroman@me.com>
+@copyright (C) 2020, Roman Pushkov
+
+@doc
+Currying functionality for Erlang.
+See more at [https://en.wikipedia.org/wiki/Currying]
+
+In mathematics and computer science, currying is the technique of
+converting a function that takes multiple arguments into a sequence
+of functions that each take a single argument.
+
+@end
