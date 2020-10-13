@@ -4,7 +4,7 @@ Curry
 ![Erlang](https://img.shields.io/badge/erlang-any-blue.svg?style=for-the-badge)
 [![Hex.pm](https://img.shields.io/hexpm/v/curry_erlang.svg?style=for-the-badge)](https://hex.pm/packages/curry_erlang)
 
-[Currying](https://en.wikipedia.org/wiki/Currying) functionality in Erlang.
+[Currying](https://en.wikipedia.org/wiki/Currying) for Erlang.
 
 Requirements
 -----
