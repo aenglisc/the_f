@@ -1,0 +1,11 @@
+{application, curry_erlang, [
+    {description, "Currying functionality in Erlang"},
+    {vsn, "0.1.0"},
+    {registered, []},
+    {applications, [kernel, stdlib]},
+    {env, []},
+    {modules, []},
+    {contributors, ["Roman Pushkov"]},
+    {licenses, ["Apache 2.0"]},
+    {links, [{"Github", "https://github.com/aenglisc/curry_erlang"}]}
+]}.
