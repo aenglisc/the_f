@@ -42,3 +42,5 @@ jobs:
       run: rebar3 fmt -c
     - name: Run tests
       run: rebar3 ct
+    - name: Run property tests
+      run: rebar3 proper --constraint_tries 100
