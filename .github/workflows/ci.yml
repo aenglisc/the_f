@@ -13,19 +13,6 @@ on:
       - 'LICENSE'
 
 jobs:
-  erlang_18:
-    runs-on: ubuntu-latest
-
-    container:
-      image: erlang:18
-
-    steps:
-    - uses: actions/checkout@v2
-    - name: Compile
-      run: rebar3 compile
-    - name: Run tests
-      run: rebar3 ct
-
   erlang_23:
     runs-on: ubuntu-latest
 
