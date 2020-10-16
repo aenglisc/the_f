@@ -24,7 +24,6 @@ Double(10).
 
 #### apply multiple arguments to a curried function
 ```erlang
-PRK = hkdf:extract(sha384, <<"Never gonna give you up">>).
 Foldl = curry:curry(fun lists:foldl/3),
 Sum = curry:papply(Foldl, [fun erlang:'+'/2, 0]),
 Sum(lists:seq(1, 10)).
