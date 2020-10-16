@@ -8,13 +8,9 @@
 
 prop_curry() ->
     ?FORALL(
-        Arity,
-        arity_limit(),
-        ?FORALL(
-            ReturnType,
-            term(),
-            gen_curried_function(Arity, ReturnType)
-        )
+       {Arity, ReturnType},
+       {arity(20), term()},
+       gen_curried_function(Arity, ReturnType)
     ).
 
 gen_curried_function(Arity, ReturnType) ->
@@ -29,8 +25,8 @@ assertions(F, Arity, ReturnType) ->
         is_function(F, 1) andalso
         is_function(papply(F, lists:seq(1, Arity - 1)), 1).
 
-arity_limit() ->
-    ?SUCHTHAT(Arity, pos_integer(), Arity =< 20 andalso Arity > 1).
+arity(Limit) ->
+    ?SUCHTHAT(Arity, pos_integer(), Arity =< Limit andalso Arity > 1).
 
 curried_function(Arity, ReturnType) ->
     ?LET(F, function(Arity, ReturnType), curry(F)).
