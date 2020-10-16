@@ -8,9 +8,9 @@
 
 prop_curry() ->
     ?FORALL(
-       {Arity, ReturnType},
-       {arity(20), term()},
-       gen_curried_function(Arity, ReturnType)
+        {Arity, ReturnType},
+        {arity(20), term()},
+        gen_curried_function(Arity, ReturnType)
     ).
 
 gen_curried_function(Arity, ReturnType) ->
