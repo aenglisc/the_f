@@ -48,12 +48,12 @@ f:do(2, [
    (fun(X) -> f:ok(X * 21) end),
    (fun(X) -> f:ok(X * 10) end)
 ]).
-%% {ok, 420}
+% {ok, 420}
 
 f:do(1, [
    (fun(X) -> f:ok(X * 1) end),
    (fun(_) -> f:err(go_away) end),
    (fun(X) -> f:ok(X + 1) end)
 ]).
-%% {error, go_away}
+% {error, go_away}
 ```
