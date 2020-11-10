@@ -4,7 +4,7 @@
 -include_lib("stdlib/include/assert.hrl").
 
 prop_identity() ->
-    ?FORALL(T, term(), T =:= f:identity(T)).
+    ?FORALL(T, term(), T =:= f:id(T)).
 
 prop_curry() ->
     ?FORALL(
@@ -20,18 +20,6 @@ prop_is_curried() ->
         is_curried_assertions(Arity, ReturnType)
     ).
 
-% TODO:
-% prop_flip() ->
-%     ?FORALL(T, function(), T =:= f:identity(T)).
-
-% TODO:
-% prop_partial() ->
-%     ?FORALL(T, function(), T =:= f:identity(T)).
-
-% TODO:
-% prop_pipe() ->
-%     ?FORALL(T, function(), T =:= f:identity(T)).
-
 prop_ok() ->
     ?FORALL(T, term(), {ok, T} =:= f:ok(T)).
 
@@ -40,10 +28,6 @@ prop_err() ->
 
 prop_unwrap() ->
     ?FORALL(T, f:result(), unwrap_assertions(T)).
-
-% TODO:
-% prop_do() ->
-%     ?FORALL(T, function(), T =:= f:identity(T)).
 
 %%====================================================================
 %% Internal functions
