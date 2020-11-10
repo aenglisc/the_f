@@ -1,0 +1,292 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Module f</title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" title="EDoc">
+</head>
+<body bgcolor="white">
+<div class="navbar"><a name="#navbar_top"></a><table width="100%" border="0" cellspacing="0" cellpadding="2" summary="navigation bar"><tr><td><a href="overview-summary.html" target="overviewFrame">Overview</a></td><td><a href="http://www.erlang.org/"><img src="erlang.png" align="right" border="0" alt="erlang logo"></a></td></tr></table></div>
+<hr>
+
+<h1>Module f</h1>
+<ul class="index"><li><a href="#description">Description</a></li><li><a href="#types">Data Types</a></li><li><a href="#index">Function Index</a></li><li><a href="#functions">Function Details</a></li></ul>
+  A collection of functions and types to make your Erlang code more
+  functional, funky and/or fancy.
+<p>Copyright © (C) 2020, Roman Pushkov
+ </p>
+
+<p><b>Authors:</b> Roman Pushkov (<a href="mailto:pushkovroman@me.com"><tt>pushkovroman@me.com</tt></a>).</p>
+
+<h2><a name="description">Description</a></h2>
+  A collection of functions and types to make your Erlang code more
+  functional, funky and/or fancy.
+<h2><a name="types">Data Types</a></h2>
+
+<h3 class="typedecl"><a name="type-curried">curried()</a></h3>
+<p><tt>curried(X, Y, T) = <a href="#type-lambda">lambda</a>(X, <a href="#type-curried">curried</a>(Y, T) | T)</tt></p>
+
+
+<h3 class="typedecl"><a name="type-curried">curried()</a></h3>
+<p><tt>curried(X, T) = <a href="#type-lambda">lambda</a>(X, <a href="#type-curried">curried</a>(T) | T)</tt></p>
+
+
+<h3 class="typedecl"><a name="type-curried">curried()</a></h3>
+<p><tt>curried(T) = <a href="#type-lambda">lambda</a>(any(), <a href="#type-curried">curried</a>(T) | T)</tt></p>
+
+
+<h3 class="typedecl"><a name="type-curried">curried()</a></h3>
+<p><tt>curried() = <a href="#type-curried">curried</a>(any())</tt></p>
+
+
+<h3 class="typedecl"><a name="type-err">err()</a></h3>
+<p><tt>err(E) = {error, E}</tt></p>
+
+
+<h3 class="typedecl"><a name="type-func">func()</a></h3>
+<p><tt>func(T) = fun((...) -&gt; T)</tt></p>
+
+
+<h3 class="typedecl"><a name="type-func">func()</a></h3>
+<p><tt>func() = <a href="#type-func">func</a>(any())</tt></p>
+
+
+<h3 class="typedecl"><a name="type-lambda">lambda()</a></h3>
+<p><tt>lambda(X, T) = fun((X) -&gt; T)</tt></p>
+
+
+<h3 class="typedecl"><a name="type-lambda">lambda()</a></h3>
+<p><tt>lambda(T) = <a href="#type-lambda">lambda</a>(any(), T)</tt></p>
+
+
+<h3 class="typedecl"><a name="type-lambda">lambda()</a></h3>
+<p><tt>lambda() = <a href="#type-lambda">lambda</a>(any())</tt></p>
+
+
+<h3 class="typedecl"><a name="type-ok">ok()</a></h3>
+<p><tt>ok(T) = {ok, T}</tt></p>
+
+
+<h3 class="typedecl"><a name="type-result">result()</a></h3>
+<p><tt>result(T, E) = <a href="#type-ok">ok</a>(T) | <a href="#type-err">err</a>(E)</tt></p>
+
+
+<h3 class="typedecl"><a name="type-result">result()</a></h3>
+<p><tt>result(T) = <a href="#type-result">result</a>(T, any())</tt></p>
+
+
+<h3 class="typedecl"><a name="type-result">result()</a></h3>
+<p><tt>result() = <a href="#type-result">result</a>(any(), any())</tt></p>
+
+
+<h3 class="typedecl"><a name="type-safe">safe()</a></h3>
+<p><tt>safe(X, T, E) = <a href="#type-lambda">lambda</a>(X, <a href="#type-result">result</a>(T, E))</tt></p>
+
+
+<h3 class="typedecl"><a name="type-safe">safe()</a></h3>
+<p><tt>safe(X, T) = <a href="#type-lambda">lambda</a>(X, <a href="#type-result">result</a>(T))</tt></p>
+
+
+<h3 class="typedecl"><a name="type-safe">safe()</a></h3>
+<p><tt>safe(T) = <a href="#type-lambda">lambda</a>(<a href="#type-result">result</a>(T))</tt></p>
+
+
+<h3 class="typedecl"><a name="type-safe">safe()</a></h3>
+<p><tt>safe() = <a href="#type-safe">safe</a>(any())</tt></p>
+
+
+<h2><a name="index">Function Index</a></h2>
+<table width="100%" border="1" cellspacing="0" cellpadding="2" summary="function index"><tr><td valign="top"><a href="#curry-1">curry/1</a></td><td>  
+The currying function.</td></tr>
+<tr><td valign="top"><a href="#do-2">do/2</a></td><td>  
+The do function.</td></tr>
+<tr><td valign="top"><a href="#err-1">err/1</a></td><td>  
+The err function.</td></tr>
+<tr><td valign="top"><a href="#flip-1">flip/1</a></td><td>  
+The flip function.</td></tr>
+<tr><td valign="top"><a href="#id-1">id/1</a></td><td>  
+The identity function.</td></tr>
+<tr><td valign="top"><a href="#is_curried-1">is_curried/1</a></td><td>  
+The is_curried function.</td></tr>
+<tr><td valign="top"><a href="#ok-1">ok/1</a></td><td>  
+The ok function.</td></tr>
+<tr><td valign="top"><a href="#partial-2">partial/2</a></td><td>  
+The partial application function.</td></tr>
+<tr><td valign="top"><a href="#pipe-2">pipe/2</a></td><td>  
+The pipe function.</td></tr>
+<tr><td valign="top"><a href="#unwrap-1">unwrap/1</a></td><td>  
+The unwrap function.</td></tr>
+</table>
+
+<h2><a name="functions">Function Details</a></h2>
+
+<h3 class="function"><a name="curry-1">curry/1</a></h3>
+<div class="spec">
+<p><tt>curry(F) -&gt; <a href="#type-curried">curried</a>(T)</tt>
+<ul class="definitions"><li><tt>F = <a href="#type-func">func</a>(T)</tt></li></ul></p>
+</div><p><p>  
+The currying function</p>
+ 
+  <pre>  Turns a multiple-arity function into a sequence of single-arity
+  functions, so that F(X, Y, Z) becomes Fcurried(X)(Y)(Z).
+ 
+  Note that Erlang's syntax will require extra parentheses
+  if you wish to pass the arguments in a single statement.
+ 
+  Example:
+  &gt; Multiply = f:curry(fun erlang:'*'/2),
+  &gt; Double = Multiply(2),
+  &gt; Double(10).
+  20
+  &gt; Map = f:curry(fun lists:map/2),
+  &gt; Sequence = f:curry(fun lists:seq/2),
+  &gt; From1To = Sequence(1),
+  &gt; (Map(Double))(From1To(10)),
+  [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]</pre></p>
+
+<h3 class="function"><a name="do-2">do/2</a></h3>
+<div class="spec">
+<p><tt>do(X, Fs) -&gt; <a href="#type-result">result()</a></tt>
+<ul class="definitions"><li><tt>X = any()</tt></li><li><tt>Fs = [<a href="#type-safe">safe()</a>]</tt></li></ul></p>
+</div><p><p>  
+The do function</p>
+ 
+  <pre>  Similar to the pipe function, do pipes data through series of
+  functions, however in this case the functions should return the
+  result type: either an {ok, Value} or {error, Reason}.
+  Terminates on an error result, preventing further computation and
+  returning the error result itself.
+ 
+  Example:
+  &gt; f:do(1, [
+  &gt;    (fun(X) -&gt; f:ok(X * 1) end),
+  &gt;    (fun(_) -&gt; f:err(go_away) end),
+  &gt;    (fun(X) -&gt; f:ok(X + 1) end)
+  &gt; ]).
+  {error, go_away}</pre></p>
+
+<h3 class="function"><a name="err-1">err/1</a></h3>
+<div class="spec">
+<p><tt>err(E) -&gt; <a href="#type-err">err</a>(E)</tt><br></p>
+</div><p><p>  
+The err function</p>
+ 
+  <pre>  Wraps data into the err type.
+ 
+  Example:
+  &gt; f:err(zoomer).
+  {error, zoomer}</pre></p>
+
+<h3 class="function"><a name="flip-1">flip/1</a></h3>
+<div class="spec">
+<p><tt>flip(F::<a href="#type-func">func</a>(T) | <a href="#type-curried">curried</a>(X, Y, T)) -&gt; <a href="#type-curried">curried</a>(Y, X, T)</tt><br></p>
+</div><p><p>  
+The flip function</p>
+ 
+  <pre>  Flips the next two arguments of a curried function. A non-curried
+  function will be curried before flip is applied.
+  Will return an unchanged function if no more arguments to
+  be applied are left.
+ 
+  Example:
+  &gt; Get = (f:curry(fun maps:get/3))(a),
+  &gt; GetWithDefault = (f:flip(Get))(42),
+  &gt; GetWithDefault(#{}).
+  42</pre></p>
+
+<h3 class="function"><a name="id-1">id/1</a></h3>
+<div class="spec">
+<p><tt>id(T) -&gt; T</tt>
+<ul class="definitions"><li><tt>T = any()</tt></li></ul></p>
+</div><p><p>  
+The identity function</p>
+ 
+  <pre>  Returns the passed entity.
+ 
+  Example:
+  &gt; f:id(a).
+  a</pre></p>
+
+<h3 class="function"><a name="is_curried-1">is_curried/1</a></h3>
+<div class="spec">
+<p><tt>is_curried(F) -&gt; boolean()</tt>
+<ul class="definitions"><li><tt>F = <a href="#type-func">func()</a></tt></li></ul></p>
+</div><p><p>  
+The is_curried function</p>
+ 
+  <pre>  Checks if a function is curried. Single-arity functions are
+  considered curried.
+ 
+  Example:
+  &gt; f:is_curried(fun(_) -&gt; hello end).
+  true
+  &gt; f:is_curried(fun lists:foldl/3).
+  false
+  &gt; f:is_curried(f:curry(fun lists:foldl/3)).
+  true</pre></p>
+
+<h3 class="function"><a name="ok-1">ok/1</a></h3>
+<div class="spec">
+<p><tt>ok(T) -&gt; <a href="#type-ok">ok</a>(T)</tt><br></p>
+</div><p><p>  
+The ok function</p>
+ 
+  <pre>  Wraps data into the ok type.
+ 
+  Example:
+  &gt; f:ok(boomer).
+  {ok, boomer}</pre></p>
+
+<h3 class="function"><a name="partial-2">partial/2</a></h3>
+<div class="spec">
+<p><tt>partial(F, Args::list()) -&gt; <a href="#type-curried">curried</a>(T) | T</tt>
+<ul class="definitions"><li><tt>F = <a href="#type-func">func</a>(T) | <a href="#type-curried">curried</a>(T)</tt></li></ul></p>
+</div><p><p>  
+The partial application function</p>
+ 
+  <pre>  Partially applies a list of arguments to a function.
+ 
+  Example:
+  &gt; Foldl = f:partial(fun lists:foldl/3),
+  &gt; Sum = f:partial(Foldl, [fun erlang:'+'/2, 0]),
+  &gt; Sum(lists:seq(1, 10)).
+  55</pre></p>
+
+<h3 class="function"><a name="pipe-2">pipe/2</a></h3>
+<div class="spec">
+<p><tt>pipe(X, Fs) -&gt; T</tt>
+<ul class="definitions"><li><tt>X = any()</tt></li><li><tt>Fs = [<a href="#type-lambda">lambda()</a>]</tt></li><li><tt>T = any()</tt></li></ul></p>
+</div><p><p>  
+The pipe function</p>
+ 
+  <pre>  Pipes data through a list of single-arity functions.
+  Naturally, you may use partially applied functions.
+ 
+  Example:
+  &gt; f:pipe(1, [
+  &gt;    (f:curry(fun erlang:'+'/2))(1),
+  &gt;    (fun(X) -&gt; X * 2 end),
+  &gt;    (f:partial(fun lists:seq/3, [1, 50]))
+  &gt; ]).
+  [1,5,9,13,17,21,25,29,33,37,41,45,49]</pre></p>
+
+<h3 class="function"><a name="unwrap-1">unwrap/1</a></h3>
+<div class="spec">
+<p><tt>unwrap(T::<a href="#type-result">result</a>(T)) -&gt; T | no_return()</tt><br></p>
+</div><p><p>  
+The unwrap function</p>
+ 
+  <pre>  Unwraps the result type. Returns the actual result or throws
+  the stored error.
+ 
+  Example:
+  &gt; f:unwrap(f:ok(1)).
+  1
+  &gt; f:unwrap(f:err(go_away)).
+  ** exception throw: go_away</pre></p>
+<hr>
+
+<div class="navbar"><a name="#navbar_bottom"></a><table width="100%" border="0" cellspacing="0" cellpadding="2" summary="navigation bar"><tr><td><a href="overview-summary.html" target="overviewFrame">Overview</a></td><td><a href="http://www.erlang.org/"><img src="erlang.png" align="right" border="0" alt="erlang logo"></a></td></tr></table></div>
+<p><i>Generated by EDoc</i></p>
+</body>
+</html>

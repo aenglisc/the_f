@@ -1,0 +1,11 @@
+{application, the_f, [
+    {description, "Make your Erlang code a bit more fancy."},
+    {vsn, "1.0.0"},
+    {registered, []},
+    {applications, [kernel, stdlib]},
+    {env, []},
+    {modules, []},
+    {contributors, ["Roman Pushkov"]},
+    {licenses, ["Apache 2.0"]},
+    {links, [{"Github", "https://github.com/aenglisc/f"}]}
+]}.
