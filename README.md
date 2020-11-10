@@ -2,7 +2,7 @@ The f
 =====
 [![GitHub Workflow Status](https://img.shields.io/github/workflow/status/aenglisc/the_f/CI?style=for-the-badge)](https://github.com/aenglisc/the_f/runs/801486938)
 ![Erlang](https://img.shields.io/badge/erlang-any-blue.svg?style=for-the-badge)
-[![Hex.pm](https://img.shields.io/hexpm/v/f.svg?style=for-the-badge)](https://hex.pm/packages/the_f)
+[![Hex.pm](https://img.shields.io/hexpm/v/the_f.svg?style=for-the-badge)](https://hex.pm/packages/the_f)
 
 A collection of functions and types to make your Erlang code more functional, funky and/or fancy.
 
