@@ -310,14 +310,14 @@ is_curried_(F) when not is_function(F, 1) -> false;
 is_curried_(F) when is_function(F, 1) -> true.
 
 -spec
-curry_(F) -> curried(T) when F :: fun((...) -> T).
+curry_(F) -> curried(T) when F :: func(T).
 curry_(F) when not is_function(F) -> not_a_function(F);
 curry_(F) when is_function(F, 0) -> not_curriable(F);
 curry_(F) when is_function(F, 1) -> id_(F);
 curry_(F) when is_function(F) -> curried(F, function_arity(F), []).
 
 -spec
-curried(F, arity(), list()) -> curried(T) when F :: fun((...) -> T).
+curried(F, arity(), list()) -> curried(T) when F :: func(T).
 curried(F, Arity, Args) when Arity =:= 1 ->
     fun(Arg) -> apply(F, lists:reverse([Arg | Args])) end;
 curried(F, Arity, Args) when Arity =/= 1 ->
@@ -360,7 +360,7 @@ applicator(X, F) when is_function(F, 1) -> F(X);
 applicator(_, _) -> too_many_arguments().
 
 -spec
-function_arity(F) -> non_neg_integer() when F :: fun().
+function_arity(F) -> non_neg_integer() when F :: func().
 function_arity(F) -> erlang:element(2, erlang:fun_info(F, arity)).
 
 -spec
