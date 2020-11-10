@@ -62,7 +62,7 @@ gen_curried_function(Arity, ReturnType) ->
 curried_function(Arity, ReturnType) ->
     ?LET(F, function(Arity, ReturnType), f:curry(F)).
 
-curry_assertions(F, 1, ReturnType) ->
+curry_assertions(F, 1 = Arity, ReturnType) ->
     ReturnType =:= f:partial(F, lists:seq(1, Arity)) andalso
     is_function(F, 1) andalso
     f:is_curried(F);
