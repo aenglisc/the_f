@@ -7,5 +7,5 @@
     {modules, []},
     {contributors, ["Roman Pushkov"]},
     {licenses, ["Apache 2.0"]},
-    {links, [{"Github", "https://github.com/aenglisc/f"}]}
+    {links, [{"Github", "https://github.com/aenglisc/the_f"}]}
 ]}.
