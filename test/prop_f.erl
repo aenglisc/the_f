@@ -34,7 +34,7 @@ prop_unwrap() ->
 %%====================================================================
 
 arity(Limit) ->
-    ?SUCHTHAT(Arity, pos_integer(), Arity =< Limit andalso Arity >= 1).
+    ?SUCHTHAT(Arity, pos_integer(), Arity =< Limit).
 
 gen_curried_function(Arity, ReturnType) ->
     ?FORALL(
